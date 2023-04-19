@@ -6,9 +6,11 @@ function App() {
   const [search, setSearch] = useState("");
   const inputRef = useRef();
 
+  const apiKey = process.env.REACT_APP_API_KEY;
+
   const searchBook = (e) => {
     e.preventDefault()
-    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=AIzaSyDnNOVRgJC2tsZKx45ZAdCKzd-_6zcmA7U`)
+    axios.get(`https://www.googleapis.com/books/v1/volumes?q=${search}&key=${apiKey}`)
     .then(res => console.log(res))
     .catch(err => console.log(err))
   };

@@ -1,10 +1,9 @@
 import { useState, useRef } from "react";
 import client from "../../../utils/api-client";
-import PagePresentation from "./PagePresentation/PagePresentation";
 import SearchBar from "./SearchBar/SearchBar";
 import BookResult from "../BookResult/BookResult";
-import "./DiscoverBooks.css"
-import {books} from "../../../utils/fake-search-results"
+import "./DiscoverBooks.css";
+import { books } from "../../../utils/fake-search-results";
 
 function DiscoverBooks() {
   const [data, setData] = useState(books);
@@ -15,14 +14,18 @@ function DiscoverBooks() {
 
   return (
     <>
-      <PagePresentation />
-      <SearchBar onSubmit={searchBook}/>
-      <img src="https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg" alt="books"/>
+      <div className="header">
+        <div className="page-presentation">
+          <h1>Find your favorites books and keep track of them.</h1>
+        </div>
+          <SearchBar onSubmit={searchBook} />
+      </div>
       <div className="results">
-        {data ? data.map((b, i) => {
-          return <BookResult data={data[i]} key={i}/>
-        }) : null}
-        
+        {data
+          ? data.map((b, i) => {
+              return <BookResult data={data[i]} key={i} />;
+            })
+          : null}
       </div>
     </>
   );

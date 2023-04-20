@@ -1,12 +1,12 @@
 import { useRef } from "react";
+import "./SearchBar.css";
 
 function SearchBar(onSubmit) {
-
   const inputRef = useRef();
 
   function handleSubmit(e) {
     e.preventDefault();
-    onSubmit(inputRef.current.value)
+    onSubmit(inputRef.current.value);
   }
 
   return (
@@ -24,6 +24,10 @@ function SearchBar(onSubmit) {
             <i className="fa-solid fa-magnifying-glass" type="submit"></i>
           </button>
         </form>
+        <img
+          src="https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg"
+          alt="books"
+        />
       </div>
     </div>
   );

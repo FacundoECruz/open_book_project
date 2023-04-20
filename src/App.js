@@ -6,7 +6,7 @@ import UnauthenticatedApp from "./components/unauthenticated/UnauthenticatedApp"
 
 function App() {
 
-  const [user, setUser] = useState(null)
+  const [user, setUser] = useState({name: "Facu"})
 
   return (
     <div className="App">

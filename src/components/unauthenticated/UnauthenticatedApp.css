@@ -1,0 +1,8 @@
+.unauthenticated-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  align-items: center;
+  border: 1px solid black;
+}

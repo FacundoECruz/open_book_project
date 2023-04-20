@@ -1,10 +1,11 @@
 import "./App.css";
+import AuthenticatedApp from "./components/authenticated/AuthenticatedApp";
 
 function App() {
   return (
     <div className="App">
-      <div className="page-presentation">
-        <h1>Open Book</h1>
+      <div>
+        <AuthenticatedApp />
       </div>
     </div>
   );

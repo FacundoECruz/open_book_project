@@ -1,28 +1,23 @@
 import { useState, useRef } from "react";
-import axios from "axios";
+import client from "../../../utils/api-client";
+import BookResult from "../BookResult/BookResult";
 
 function DiscoverBooks() {
   const [search, setSearch] = useState("");
   const [data, setData] = useState([]);
   const inputRef = useRef();
 
-  const apiKey = process.env.REACT_APP_API_KEY;
-
   const searchBook = (e) => {
     e.preventDefault();
-    axios
-      .get(
-        `https://www.googleapis.com/books/v1/volumes?q=${search}&key=${apiKey}`
-      )
-      .then((res) => setData(res.data.items))
-      .catch((err) => console.log(err));
+    client(search).then((data) => setData(data));
   };
 
   return (
     <>
-      <div className="search-bar"></div>
-      <div className="search-results"></div>
-      <div>
+      <div className="page-presentation">
+        <h1>Open Book</h1>
+      </div>
+      <div className="search-bar">
         <h2>Find your book</h2>
         <div className="search">
           <form onSubmit={searchBook}>
@@ -39,6 +34,9 @@ function DiscoverBooks() {
             </button>
           </form>
         </div>
+      </div>
+      <div className="results">
+        <BookResult />
       </div>
     </>
   );

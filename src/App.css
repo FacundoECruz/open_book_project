@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;700&family=Roboto+Serif:opsz,wght@8..144,100&display=swap');
 * {
+  padding: 0;
   margin: 0;
   box-sizing: border-box;
+  font-family: 'Bodoni Moda', serif;
 }
 
 .App {
   display: flex;
   justify-content: center;
+}
+
+:root {
+  --primary-color: #EDF6F9;
+  --secondary-color: #E29578;
+  --pink: #FFDDD2;
+  --water-green: #006D77;
+  --light-green: #83C5BE;
 }

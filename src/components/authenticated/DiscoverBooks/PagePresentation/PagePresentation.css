@@ -1,3 +1,5 @@
-.page-presentation{
+.page-presentation{ 
   width: 50%;
+  height: 250px;
+  border: 1px solid black;
  }

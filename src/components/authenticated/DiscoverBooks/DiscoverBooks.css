@@ -1,5 +1,37 @@
-.search {
-  width: 50%;
+:root {
+  --primary-color: #e29578;
+  --secondary-color: #edf6f9;
+  --pink: #ffddd2;
+  --water-green: #006d77;
+  --light-green: #83c5be;
+}
+
+.header {
+  width: 100%;
+  height: 400px;
+  color: var(--pink);
+  box-shadow: 0 5px 10px var(--pink);
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.page-presentation h1 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-left: 15px;
+}
+
+.page-presentation ::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0,0,0,0,5), rgba(0,0,0,0.5)),url(../../../../public/library.jpg);
+  clip-path: circle(60% at left 300px);
+  z-index: -1;
 }
 
 .results {

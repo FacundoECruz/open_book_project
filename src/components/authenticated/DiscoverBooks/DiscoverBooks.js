@@ -17,6 +17,7 @@ function DiscoverBooks() {
     <>
       <PagePresentation />
       <SearchBar onSubmit={searchBook}/>
+      <img src="https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg" alt="books"/>
       <div className="results">
         {data ? data.map((b, i) => {
           return <BookResult data={data[i]} key={i}/>

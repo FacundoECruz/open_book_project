@@ -18,8 +18,10 @@ function DiscoverBooks() {
       <PagePresentation />
       <SearchBar onSubmit={searchBook}/>
       <div className="results">
-        {/* Here we need map to call a component for each book */}
-        <BookResult />
+        {data ? data.map((b, i) => {
+          return <BookResult data={data[i]} key={i}/>
+        }) : null}
+        
       </div>
     </>
   );

@@ -1,0 +1,5 @@
+.authenticated-app {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}

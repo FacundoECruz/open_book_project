@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import client from "../../../utils/api-client";
 import BookResult from "../BookResult/BookResult";
+import "./DiscoverBooks.css"
 
 function DiscoverBooks() {
   const [search, setSearch] = useState("");
@@ -36,6 +37,7 @@ function DiscoverBooks() {
         </div>
       </div>
       <div className="results">
+        {/* Here we need map to call a component for each book */}
         <BookResult />
       </div>
     </>

@@ -11,8 +11,7 @@ function LoginForm({btnText, onSubmit}) {
   }
 
   return ( 
-    <div className="form-container">
-      <form onSubmit={handleSubmit}>
+      <form className="form-container" onSubmit={handleSubmit}>
         <div className="username-container">
           <label htmlFor="username">Username </label>
           <input type="text" id="username" />
@@ -23,7 +22,6 @@ function LoginForm({btnText, onSubmit}) {
         </div>
         <button type="submit">{btnText}</button>
       </form>
-    </div>
    );
 }
 

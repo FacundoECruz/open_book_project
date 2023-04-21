@@ -6,12 +6,15 @@ import UnauthenticatedApp from "./components/unauthenticated/UnauthenticatedApp"
 
 function App() {
 
-  const [user, setUser] = useState(null)
+  const initialState = window.localStorage.getItem("user");
+
+  const [user, setUser] = useState(initialState)
 
   function handleUser({username, password}) {
     //Hay que ver como hacemos para autenticar y autorizar los 
     //usuarios. Buscar lo del alcance de Google
-    window.localStorage.setItem('user', username)
+    window.localStorage.setItem("user", username)
+    setUser(username)
   }
 
   return (

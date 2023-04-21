@@ -1,12 +1,13 @@
 import "./LoginForm.css"
 
-function LoginForm({btnText}) {
+function LoginForm({btnText, onSubmit}) {
 
   function handleSubmit(e) {
     e.preventDefault()
     const username = e.target.elements.username.value
     const password = e.target.elements.password.value
-    console.log(`Username: ${username}, Password: ${password}`)
+    const formData = {username: username, password: password}
+    onSubmit(formData)
   }
 
   return ( 

@@ -6,13 +6,17 @@ import UnauthenticatedApp from "./components/unauthenticated/UnauthenticatedApp"
 
 function App() {
 
-  const [user, setUser] = useState({name: "Facu"})
+  const [user, setUser] = useState(null)
+
+  function handleUser({username, password}) {
+    //Hay que ver como hacemos para autenticar y autorizar los 
+    //usuarios. Buscar lo del alcance de Google
+    window.localStorage.setItem('user', username)
+  }
 
   return (
     <div className="App">
-      <div>
-        {user ? <AuthenticatedApp /> : <UnauthenticatedApp />}
-      </div>
+        {user ? <AuthenticatedApp /> : <UnauthenticatedApp onSubmit={handleUser}/>}
     </div>
   );
 }

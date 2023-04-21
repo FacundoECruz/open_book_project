@@ -2,7 +2,7 @@ import Modal from "./Modal/Modal";
 import { useState } from "react";
 import "./UnauthenticatedApp.css";
 
-function UnauthenticatedApp() {
+function UnauthenticatedApp({ onSubmit }) {
   const [status, setStatus] = useState("idle");
 
   function closeModal() {
@@ -22,7 +22,7 @@ function UnauthenticatedApp() {
           </div>
         </div>
       ) : null}
-      {status === "idle" ? null : <Modal btnText={status} close={closeModal} />}
+      {status === "idle" ? null : <Modal btnText={status} close={closeModal} onSubmit={onSubmit}/>}
     </div>
   );
 }

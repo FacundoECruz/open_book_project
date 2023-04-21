@@ -30,3 +30,7 @@
   top: 5%;
   left: 95%;
 }
+
+.modal-header h2 {
+  margin-top: 2%;
+}

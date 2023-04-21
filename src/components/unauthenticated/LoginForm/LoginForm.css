@@ -10,7 +10,17 @@
   margin: 5px 0;
 }
 
+#username, #password {
+  width: 100%;
+}
+
 .form-container button {
   width: 30%;
-  margin-top: 2%;
+  margin-top: 6%;
+}
+
+.form-container p {
+  color: red;
+  font-weight: 700;
+  margin: 2%;
 }

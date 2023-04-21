@@ -19,7 +19,7 @@ function App() {
 
   return (
     <div className="App">
-        {user ? <AuthenticatedApp /> : <UnauthenticatedApp onSubmit={handleUser}/>}
+        {user ? <AuthenticatedApp user={user}/> : <UnauthenticatedApp onSubmit={handleUser}/>}
     </div>
   );
 }

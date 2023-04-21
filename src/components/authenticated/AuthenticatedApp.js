@@ -1,10 +1,10 @@
 import DiscoverBooks from "./DiscoverBooks/DiscoverBooks";
 import "./AuthenticatedApp.css"
 
-function AuthenticatedApp() {
+function AuthenticatedApp({user}) {
   return (
     <div className="authenticated-app">
-      <DiscoverBooks />
+      <DiscoverBooks user={user}/>
     </div>
   );
 }

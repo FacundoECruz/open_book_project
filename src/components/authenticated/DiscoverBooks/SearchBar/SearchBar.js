@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./SearchBar.css";
 
-function SearchBar(onSubmit) {
+function SearchBar({ onSubmit, user }) {
   const inputRef = useRef();
 
   function handleSubmit(e) {
@@ -11,7 +11,10 @@ function SearchBar(onSubmit) {
 
   return (
     <div className="search-bar">
-      <h2>Find your book</h2>
+      <div className="search-header">
+        <h2>Find your book {user}</h2>
+        <button className="logout-btn">Logout</button>
+      </div>
       <div className="search">
         <form onSubmit={handleSubmit}>
           <input

@@ -5,7 +5,7 @@ import BookResult from "../BookResult/BookResult";
 import "./DiscoverBooks.css";
 import { books } from "../../../utils/fake-search-results";
 
-function DiscoverBooks({user}) {
+function DiscoverBooks({user, logout}) {
   const [data, setData] = useState(books);
 
   const searchBook = (formData) => {
@@ -18,7 +18,7 @@ function DiscoverBooks({user}) {
         <div className="page-presentation">
           <h1>Find your favorites books and keep track of them.</h1>
         </div>
-          <SearchBar onSubmit={searchBook} user={user}/>
+          <SearchBar onSubmit={searchBook} user={user} logout={logout}/>
       </div>
       <div className="results">
         {data

@@ -6,7 +6,7 @@ import UnauthenticatedApp from "./components/unauthenticated/UnauthenticatedApp"
 
 function App() {
 
-  const initialState = window.localStorage.getItem("user");
+  const initialState = window.localStorage.getItem("user") || null;
 
   const [user, setUser] = useState(initialState)
 
@@ -17,9 +17,14 @@ function App() {
     setUser(username)
   }
 
+  function logout() {
+    window.localStorage.removeItem("user")
+    setUser(null)
+  }
+
   return (
     <div className="App">
-        {user ? <AuthenticatedApp user={user}/> : <UnauthenticatedApp onSubmit={handleUser}/>}
+        {user ? <AuthenticatedApp user={user} logout={logout}/> : <UnauthenticatedApp onSubmit={handleUser}/>}
     </div>
   );
 }

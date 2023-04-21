@@ -11,12 +11,14 @@ function SearchBar({ onSubmit, user, logout }) {
 
   return (
     <div className="search-bar">
+      <button onClick={logout} className="logout-btn">
+        Logout
+      </button>
       <div className="search-header">
         <h2>Find your book {user}</h2>
-        <button onClick={logout} className="logout-btn">Logout</button>
       </div>
       <div className="search">
-        <form onSubmit={handleSubmit}>
+        <form className="search-form-container" onSubmit={handleSubmit}>
           <input
             id="book-name"
             type="text"

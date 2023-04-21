@@ -16,6 +16,10 @@
   position: relative;
 }
 
+.page-presentation {
+  width: 50%;
+}
+
 .page-presentation h1 {
   font-size: 1.5rem;
   text-align: center;

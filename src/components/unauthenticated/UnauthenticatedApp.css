@@ -1,12 +1,50 @@
+:root {
+  --primary-color: #e29578;
+  --secondary-color: #edf6f9;
+  --pink: #ffddd2;
+  --water-green: #006d77;
+  --light-green: #83c5be;
+}
+
 .unauthenticated-app {
+  width: 50%;
+  height: 200px;
   display: flex;
   flex-direction: column;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  border: 1px solid black;
 }
 
+.card {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
+.head {
+  margin: 10%;
+}
 
+.buttons {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+button {
+  width: 40%;
+  padding: 2px;
+  border-radius: 10%;
+  background-color: var(--secondary-color);
+}
+
+button:hover {
+  background-color: var(--light-green);
+}

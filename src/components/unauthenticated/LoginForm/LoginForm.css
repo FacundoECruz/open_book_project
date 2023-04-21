@@ -1,0 +1,16 @@
+.form-container {
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.username-container,
+.password-container {
+  margin: 5px 0;
+}
+
+.form-container button {
+  width: 30%;
+  margin-top: 2%;
+}

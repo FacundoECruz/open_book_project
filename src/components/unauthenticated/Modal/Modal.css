@@ -1,5 +1,32 @@
+:root {
+  --primary-color: #e29578;
+  --secondary-color: #edf6f9;
+  --pink: #ffddd2;
+  --water-green: #006d77;
+  --light-green: #83c5be;
+}
+
 .modal-container {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid black;
+  padding: 2%;
+  background-color: var(--secondary-color);
+}
+
+.modal-header {
   display: flex;
   flex-direction: row;
-  border: 1px solid black;
+  justify-content: center;
+  position: relative;
+  margin-bottom: 2%;
+}
+
+.modal-header button {
+  width: 4%;
+  background-color: red;
+  position: absolute;
+  top: 5%;
+  left: 95%;
 }

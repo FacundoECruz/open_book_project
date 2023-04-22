@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import "./SearchBar.css";
 
-function SearchBar({ onSubmit, user, logout }) {
+function SearchBar({ onSubmit, user, logout, status }) {
   const inputRef = useRef();
 
   function handleSubmit(e) {
@@ -25,9 +25,13 @@ function SearchBar({ onSubmit, user, logout }) {
             placeholder="Enter your book name"
             ref={inputRef}
           />
-          <button>
-            <i className="fa-solid fa-magnifying-glass" type="submit"></i>
-          </button>
+          {status === "loading" ? (
+            <p>Loading...</p>
+          ) : (
+            <button>
+              <i className="fa-solid fa-magnifying-glass" type="submit"></i>
+            </button>
+          )}
         </form>
         <img
           src="https://img.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg"

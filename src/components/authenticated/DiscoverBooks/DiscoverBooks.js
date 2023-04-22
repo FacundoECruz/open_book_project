@@ -16,14 +16,17 @@ function DiscoverBooks({ user, logout }) {
     setQueried(true);
   };
 
-  // useEffect(() => {
-  //   if (!queried) {
-  //     return;
-  //   }
-  //   setStatus("loading");
-  //   client(encodeURIComponent(query)).then((data) => setData(data.JSON()));
-  //   setStatus("success");
-  // }, [query, queried]);
+  useEffect(() => {
+    if (!queried) {
+      return;
+    }
+    setStatus("loading");
+    client(query).then(res => {
+      console.log(res.items)
+      setData(res.items)
+      setStatus("success")
+    })
+  }, [query, queried]);
 
   return (
     <>
@@ -31,7 +34,12 @@ function DiscoverBooks({ user, logout }) {
         <div className="page-presentation">
           <h1>Find your favorites books and keep track of them.</h1>
         </div>
-        <SearchBar onSubmit={searchBook} user={user} logout={logout} />
+        <SearchBar
+          onSubmit={searchBook}
+          user={user}
+          logout={logout}
+          status={status}
+        />
       </div>
       <div className="results">
         {data

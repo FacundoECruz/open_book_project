@@ -1,7 +1,9 @@
 import "./BookResult.css";
+import {Routes, Route, Link} from "react-router-dom"
 
 function BookResult({ data }) {
-  console.log(data);
+
+  console.log(data.id)
 
   const {
     authors,
@@ -17,11 +19,12 @@ function BookResult({ data }) {
   const thumbnailUrl = imageLinks.smallThumbnail;
 
   return (
+    //this div should be a Link
     <div className="book-container">
       <img src={thumbnailUrl} alt="thumbnail" />
-      {authors.map(a => {
-        return <p>{a}</p>
-      })}
+      {authors ? authors.map(a => {
+        return <p key={a}>{a}</p>
+      }): null}
       <p>{publishedDate}</p>
     </div>
   );

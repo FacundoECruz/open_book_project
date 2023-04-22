@@ -7,6 +7,9 @@ function SearchBar({ onSubmit, user, logout, status }) {
   function handleSubmit(e) {
     e.preventDefault();
     onSubmit(inputRef.current.value);
+    if(status === "success"){
+      inputRef.current.value = ""
+    }
   }
 
   return (

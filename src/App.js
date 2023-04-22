@@ -11,8 +11,7 @@ function App() {
   const [user, setUser] = useState(initialState)
 
   function handleUser({username, password}) {
-    //Hay que ver como hacemos para autenticar y autorizar los 
-    //usuarios. Buscar lo del alcance de Google
+    //Vamos a necesitar un servicio de autenticacion de usuarios
     window.localStorage.setItem("user", username)
     setUser(username)
   }

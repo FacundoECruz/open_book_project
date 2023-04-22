@@ -1,15 +1,28 @@
-import "./BookResult.css"
+import "./BookResult.css";
 
-function BookResult({data}) {
+function BookResult({ data }) {
+  console.log(data);
 
-  const {title, author, year, description} = data
+  const {
+    authors,
+    categories,
+    description,
+    imageLinks,
+    publishedDate,
+    publisher,
+    subtitle,
+    title,
+  } = data.volumeInfo;
+
+  const thumbnailUrl = imageLinks.smallThumbnail;
 
   return (
     <div className="book-container">
-      <h2>{title}</h2>
-      <h3>{author}</h3>
-      <p>{year}</p>
-      <p>{description}</p>
+      <img src={thumbnailUrl} alt="thumbnail" />
+      {authors.map(a => {
+        return <p>{a}</p>
+      })}
+      <p>{publishedDate}</p>
     </div>
   );
 }

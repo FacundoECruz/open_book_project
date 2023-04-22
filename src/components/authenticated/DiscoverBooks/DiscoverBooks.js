@@ -3,10 +3,9 @@ import client from "../../../utils/api-client";
 import SearchBar from "./SearchBar/SearchBar";
 import BookResult from "../BookResult/BookResult";
 import "./DiscoverBooks.css";
-import { books } from "../../../utils/fake-search-results";
 
 function DiscoverBooks({ user, logout }) {
-  const [data, setData] = useState(books);
+  const [data, setData] = useState(null);
   const [query, setQuery] = useState(null);
   const [queried, setQueried] = useState(false);
   const [status, setStatus] = useState("idle");
@@ -22,7 +21,6 @@ function DiscoverBooks({ user, logout }) {
     }
     setStatus("loading");
     client(query).then(res => {
-      console.log(res.items)
       setData(res.items)
       setStatus("success")
     })

@@ -3,28 +3,11 @@ import client from "../../../utils/api-client";
 import SearchBar from "./SearchBar/SearchBar";
 import BookResult from "../BookResult/BookResult";
 import "./DiscoverBooks.css";
+import useQuery from "../../../hooks/useQuery";
 
 function DiscoverBooks({ user, logout }) {
-  const [data, setData] = useState(null);
-  const [query, setQuery] = useState(null);
-  const [queried, setQueried] = useState(false);
-  const [status, setStatus] = useState("idle");
-
-  const searchBook = (formData) => {
-    setQuery(formData);
-    setQueried(true);
-  };
-
-  useEffect(() => {
-    if (!queried) {
-      return;
-    }
-    setStatus("loading");
-    client(query).then(res => {
-      setData(res.items)
-      setStatus("success")
-    })
-  }, [query, queried]);
+  
+  const {data, status, searchBook} = useQuery()
 
   return (
     <>

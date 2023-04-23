@@ -6,10 +6,12 @@ function SearchBar({ onSubmit, user, logout, status }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    onSubmit(inputRef.current.value);
-    if(status === "success"){
-      inputRef.current.value = ""
+    const query = inputRef.current.value;
+    if (query === "") {
+      return;
     }
+    onSubmit(query);
+    inputRef.current.value = "";
   }
 
   return (

@@ -1,28 +1,34 @@
 import "./App.css";
-import { useState } from 'react';
+import { useState } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
 import AuthenticatedApp from "./components/authenticated/AuthenticatedApp";
 import UnauthenticatedApp from "./components/unauthenticated/UnauthenticatedApp";
 
 function App() {
-
   const initialState = window.localStorage.getItem("user") || null;
 
-  const [user, setUser] = useState(initialState)
+  const [user, setUser] = useState(initialState);
 
-  function handleUser({username, password}) {
+  function handleUser({ username, password }) {
     //Vamos a necesitar un servicio de autenticacion de usuarios
-    window.localStorage.setItem("user", username)
-    setUser(username)
+    window.localStorage.setItem("user", username);
+    setUser(username);
   }
 
   function logout() {
-    window.localStorage.removeItem("user")
-    setUser(null)
+    window.localStorage.removeItem("user");
+    setUser(null);
   }
 
   return (
     <div className="App">
-        {user ? <AuthenticatedApp user={user} logout={logout}/> : <UnauthenticatedApp onSubmit={handleUser}/>}
+      {user ? (
+        <Router>
+          <AuthenticatedApp user={user} logout={logout} />
+        </Router>
+      ) : (
+        <UnauthenticatedApp onSubmit={handleUser} />
+      )}
     </div>
   );
 }

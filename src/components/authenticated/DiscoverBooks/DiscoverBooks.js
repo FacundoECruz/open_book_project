@@ -1,5 +1,3 @@
-import { useState, useEffect } from "react";
-import client from "../../../utils/api-client";
 import SearchBar from "./SearchBar/SearchBar";
 import BookResult from "../BookResult/BookResult";
 import "./DiscoverBooks.css";

@@ -1,9 +1,8 @@
 import "./BookResult.css";
-import {Routes, Route, Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 
 function BookResult({ data }) {
-
-  console.log(data.id)
+  console.log(data.id);
 
   const {
     authors,
@@ -20,13 +19,15 @@ function BookResult({ data }) {
 
   return (
     //this div should be a Link
-    <div className="book-container">
+    <Link to={`/book/${data.id}`} className="book-container">
       <img src={thumbnailUrl} alt="thumbnail" />
-      {authors ? authors.map(a => {
-        return <p key={a}>{a}</p>
-      }): null}
+      {authors
+        ? authors.map((a) => {
+            return <p key={a}>{a}</p>;
+          })
+        : null}
       <p>{publishedDate}</p>
-    </div>
+    </Link>
   );
 }
 

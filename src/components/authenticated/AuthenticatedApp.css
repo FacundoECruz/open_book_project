@@ -1,4 +1,5 @@
 .authenticated-app {
+  width: 97%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;

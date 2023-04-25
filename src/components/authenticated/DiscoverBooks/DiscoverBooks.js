@@ -1,12 +1,9 @@
 import SearchBar from "./SearchBar/SearchBar";
 import BookResult from "../BookResult/BookResult";
 import "./DiscoverBooks.css";
-import useQuery from "../../../hooks/useQuery";
 
-function DiscoverBooks({ user, logout }) {
+function DiscoverBooks({ user, logout, data, status, searchBook }) {
   
-  const {data, status, searchBook} = useQuery()
-
   return (
     <>
       <div className="header">

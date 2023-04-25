@@ -1,6 +1,12 @@
+import BackToExplore from "../components/BackToExplore";
+import "./NotFoundScreen.css"
+
 function NotFoundScreen() {
   return ( 
-    <h1>NOT FOUND SCREEN</h1>
+    <div className="not-found-container">
+      <h2>Sorry... nothing here</h2>
+      <BackToExplore />
+    </div>
    );
 }
 

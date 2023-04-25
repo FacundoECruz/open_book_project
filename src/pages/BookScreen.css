@@ -77,6 +77,7 @@
 
 .textarea textarea {
   width: 90%;
+  height: 100px;
 }
 
 .bookshelf-buttons {
@@ -103,4 +104,8 @@
   border: 1px solid black;
   border-radius: 15%;
   align-self: center;
+}
+
+.checkboxes {
+  padding: 3px;
 }

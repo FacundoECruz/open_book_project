@@ -95,17 +95,6 @@
   margin: 3px;
 }
 
-.back-to-explore-container {
-  background-color: #83c5be;
-  display: flex;
-  align-items: center;
-  padding: 3px;
-  height: 40px;
-  border: 1px solid black;
-  border-radius: 15%;
-  align-self: center;
-}
-
 .checkboxes {
   padding: 3px;
 }

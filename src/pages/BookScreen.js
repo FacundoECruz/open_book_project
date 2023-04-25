@@ -37,6 +37,25 @@ function BookScreen({ data }) {
             <img src="../assets/library.jpg" alt="library" />
           </div> */}
       </div>
+      <div className="bookshelf-navigation">
+        <form className="review">
+          <div className="checkboxes">
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+            <input type="checkbox" />
+          </div>
+          <div className="textarea">
+            <textarea />
+          </div>
+          <button type="sumbit">Submit</button>
+        </form>
+        <div className="bookshelf-buttons">
+          <button>+</button>
+          <button>-</button>
+        </div>
+      </div>
     </>
   );
 }

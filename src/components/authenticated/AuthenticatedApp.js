@@ -21,7 +21,7 @@ function AppRoutes({user, logout, data, status, searchBook}) {
   return (
     <Routes>
       <Route path="/" element={<DiscoverBooks user={user} logout={logout} data={data} status={status} searchBook={searchBook}/>} />
-      <Route path="/book/:bookId" element={<BookScreen user={user} />} />
+      <Route path="/book/:bookId" element={<BookScreen user={user} data={data}/>} />
       <Route path="*" element={<NotFoundScreen />} />
     </Routes>
   )

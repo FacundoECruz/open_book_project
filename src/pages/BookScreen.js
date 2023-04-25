@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./BookScreen.css";
 
 function BookScreen({ data }) {
@@ -38,13 +39,16 @@ function BookScreen({ data }) {
           </div> */}
       </div>
       <div className="bookshelf-navigation">
+        <div className="back-to-explore-container">
+          <Link to={'/'}>Back to explore</Link>
+        </div>
         <form className="review">
           <div className="checkboxes">
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
-            <input type="checkbox" />
+            <input type="checkbox" value="1"/>
+            <input type="checkbox" value="2"/>
+            <input type="checkbox" value="3"/>
+            <input type="checkbox" value="4"/>
+            <input type="checkbox" value="5"/>
           </div>
           <div className="textarea">
             <textarea />

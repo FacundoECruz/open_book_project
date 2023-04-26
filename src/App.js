@@ -5,9 +5,9 @@ import AuthenticatedApp from "./components/authenticated/AuthenticatedApp";
 import UnauthenticatedApp from "./components/unauthenticated/UnauthenticatedApp";
 
 function App() {
-  const initialState = window.localStorage.getItem("user") || null;
-
-  const [user, setUser] = useState(initialState);
+  const [user, setUser] = useState(
+    () => window.localStorage.getItem("user") || null
+  );
 
   function handleUser({ username, password }) {
     //Vamos a necesitar un servicio de autenticacion de usuarios

@@ -2,33 +2,24 @@ import "./BookResult.css";
 import { Link } from "react-router-dom";
 
 function BookResult({ data }) {
-  console.log(data.id);
-
-  const {
-    authors,
-    categories,
-    description,
-    imageLinks,
-    publishedDate,
-    publisher,
-    subtitle,
-    title,
-  } = data.volumeInfo;
-
-  const thumbnailUrl = imageLinks.smallThumbnail;
-
-  return (
-    //this div should be a Link
-    <Link to={`/book/${data.id}`} className="book-container">
-      <img src={thumbnailUrl} alt="thumbnail" />
-      {authors
-        ? authors.map((a) => {
-            return <p key={a}>{a}</p>;
-          })
-        : null}
-      <p>{publishedDate}</p>
-    </Link>
-  );
+  return data.map((item) => {
+    let thumbnail =
+      item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
+    let amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
+    if (thumbnail !== undefined && amount !== undefined) {
+      return (
+        <>
+          <Link to={`/book/${item.id}`} className="book-container" key={item.id}>
+            <img src={thumbnail} alt="thumbnail" />
+            <div className="bottom">
+              <h3 className="title">{item.volumeInfo.title}</h3>
+              <p className="amount">&#8377;{amount}</p>
+            </div>
+          </Link>
+        </>
+      );
+    }
+  });
 }
 
 export default BookResult;

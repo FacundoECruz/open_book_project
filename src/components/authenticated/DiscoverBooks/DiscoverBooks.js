@@ -19,9 +19,7 @@ function DiscoverBooks({ user, logout, data, status, searchBook }) {
       </div>
       <div className="results">
         {data
-          ? data.map((b, i) => {
-              return <BookResult data={data[i]} key={i} />;
-            })
+          ? <BookResult data={data} />
           : null}
       </div>
     </>

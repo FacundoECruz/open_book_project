@@ -7,7 +7,7 @@ function client(query, customConfig = {}) {
   }
 
   return window
-    .fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`, config)
+    .fetch(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}&maxResults=40`, config)
     .then(response => response.json())
 }
 

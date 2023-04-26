@@ -1,52 +1,53 @@
 import { useParams } from "react-router-dom";
 import BackToExplore from "../components/BackToExplore";
 import "./BookScreen.css";
+import library from "../assets/library.jpg";
 
 function BookScreen({ data }) {
   const { bookId } = useParams();
-  // Encontrar el libro que necesitamos con el bookId
-  // El siguiente objeto es para probar los estilos
-  const book = {
-    title: "Asesinato en el Orient Express",
-    author: ["Agatha Christie"],
-    publishedAt: "25/06/1934", //Guarda que por ahi esto es la fecha de publicacion en la api de google
-    categories: ["mystery", "detective"],
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum labore pariatur voluptatum dolore. Cumque provident doloremque cum consequuntur, alias omnis autem consectetur sed voluptatibus quibusdam reprehenderit obcaecati beatae magni excepturi?",
-    image: "urlDeLaImagen",
-  };
+  const book = data.find((b) => b.id === bookId);
+
+  const {
+    authors,
+    categories,
+    description,
+    imageLinks,
+    pageCount,
+    previewLink,
+    publishedDate,
+    publisher,
+    title,
+    subtitle,
+  } = book.volumeInfo;
 
   return (
-    <>
-      <div className="main-screen">
-        <div className="book-header">
-          <h2>{book.title}</h2>
-          <h3>{book.author}</h3>
+    <div className="main-screen">
+      <div className="header">
+        <img src={library} alt="" />
+        <div className="info">
+          <h1>{book.title}</h1>
+          <h3>{book.authors}</h3>
+          <br />
+          <h4>
+            {publisher}
+            <span>{publishedDate}</span>
+          </h4>
+          <br />
+          <a href="https://www.google.com/">
+            <button>More</button>
+          </a>
         </div>
-        <div className="book-info">
-          <p>{book.publishedAt}</p>
-          <div className="book-categories">
-            {book.categories.map((c) => {
-              return <p>{c}</p>;
-            })}
-          </div>
-        </div>
-        <div className="book-description">
-          <p>{book.description}</p>
-        </div>
-        {/* <div className="book-image">
-            <img src="../assets/library.jpg" alt="library" />
-          </div> */}
+        <h4 className="description">{book.description}</h4>
       </div>
       <div className="bookshelf-navigation">
         <BackToExplore />
         <form className="review">
           <div className="checkboxes">
-            <input type="checkbox" value="1"/>
-            <input type="checkbox" value="2"/>
-            <input type="checkbox" value="3"/>
-            <input type="checkbox" value="4"/>
-            <input type="checkbox" value="5"/>
+            <input type="checkbox" value="1" />
+            <input type="checkbox" value="2" />
+            <input type="checkbox" value="3" />
+            <input type="checkbox" value="4" />
+            <input type="checkbox" value="5" />
           </div>
           <div className="textarea">
             <textarea />
@@ -58,7 +59,7 @@ function BookScreen({ data }) {
           <button>-</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

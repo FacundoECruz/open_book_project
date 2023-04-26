@@ -8,7 +8,6 @@ import "./AuthenticatedApp.css"
 function AuthenticatedApp({user, logout}) {
 
   const {data, status, searchBook} = useQuery()
-
   return (
     <div className="authenticated-app">
       <AppRoutes data={data} status={status} searchBook={searchBook} user={user} logout={logout}/>
@@ -19,9 +18,9 @@ function AuthenticatedApp({user, logout}) {
 
 function AppRoutes({user, logout, data, status, searchBook}) {
   return (
-    <Routes>
+    <Routes data={data}>
       <Route path="/" element={<DiscoverBooks user={user} logout={logout} data={data} status={status} searchBook={searchBook}/>} />
-      <Route path="/book/:bookId" element={<BookScreen user={user} data={data}/>} />
+      <Route path="/book/:bookId" element={<BookScreen user={user} data={data} />} />
       <Route path="*" element={<NotFoundScreen />} />
     </Routes>
   )

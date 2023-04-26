@@ -21,3 +21,22 @@ We're gonna need:
 ### NotFoundScreen
 
 - Back to discover Link
+
+<hr/>
+
+## 26/4/23
+
+<hr/>
+
+_Work in show received data in bookScreen_
+
+We're gonna need:
+
+### BookScreen
+- Pass data to bookScreen and find the book by id.
+- Restructure the page styles regarging data to show.
+
+### ExploreBooks
+- Fix the images and the styles.
+- Loading spinner.
+- Full page loading spinner.

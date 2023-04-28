@@ -1,8 +1,8 @@
 import "./App.css";
 import { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import AuthenticatedApp from "./components/authenticated/AuthenticatedApp";
-import UnauthenticatedApp from "./components/unauthenticated/UnauthenticatedApp";
+import AuthenticatedApp from "./AuthenticatedApp";
+import UnauthenticatedApp from "./UnauthenticatedApp";
 
 function App() {
   const [user, setUser] = useState(

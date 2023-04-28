@@ -1,6 +1,6 @@
 import Modal from "./Modal/Modal";
 import { useState } from "react";
-import "./UnauthenticatedApp.css";
+import "./stylesheets/UnauthenticatedApp.css";
 
 function UnauthenticatedApp({ onSubmit }) {
   const [status, setStatus] = useState("idle");

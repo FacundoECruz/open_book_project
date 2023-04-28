@@ -3,7 +3,7 @@ import BookScreen from "../../pages/BookScreen";
 import NotFoundScreen from "../../pages/NotFoundScreen";
 import useQuery from "../../hooks/useQuery";
 import {Routes, Route} from "react-router-dom"
-import "./AuthenticatedApp.css"
+import "./stylesheets/AuthenticatedApp.css"
 
 function AuthenticatedApp({user, logout}) {
 

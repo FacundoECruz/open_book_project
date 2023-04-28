@@ -96,7 +96,7 @@ _How to structure the auth/unauth app architecture?_
 
 - _hooks:_ same as assets, hooks used in diff places of app. 
 
-- _pages:_ Explore, Show, Login.
+- _pages:_ Explore, Show, Login, NotFound.
 
 - _utils:_ client, fakeDB.
 

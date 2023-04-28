@@ -1,5 +1,5 @@
 import BackToExplore from "../components/BackToExplore";
-import "./NotFoundScreen.css"
+import "../stylesheets/NotFoundScreen.css"
 
 function NotFoundScreen() {
   return ( 

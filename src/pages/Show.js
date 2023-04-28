@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import BackToExplore from "../components/BackToExplore";
-import "./BookScreen.css";
+import "../stylesheets/Show.css";
 import library from "../assets/library.jpg";
 
 function BookScreen({ data }) {

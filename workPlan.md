@@ -46,7 +46,7 @@ We're gonna need:
 
 _React folder structutre (youtube material)_
 
-The three levels are defined in relation to the large of the project rather than the  expertise level of the dev. 
+The three levels are defined in relation to the large of the project rather than the dev's expertise level. 
 
 ### BEGINNER
 
@@ -86,4 +86,19 @@ When you scale up to a really large enterprise style app, with tons of different
 
 ### ADVANCED
 
+******************************************************
+
+_How to structure the auth/unauth app architecture?_
+
+- _assets:_ you know, images and so on.
+
+- _components:_ button, form, formModal, searchInput, resultCard, review, navbar?, showCard. 
+
+- _hooks:_ same as assets, hooks used in diff places of app. 
+
+- _pages:_ authenticatedApp, unauthenticatedApp<br>
+  - authenticatedApp: Explore, Show.
+  - unauthenticatedApp: Login, Explore.
+
+- _utils:_ client, fakeDB.
 

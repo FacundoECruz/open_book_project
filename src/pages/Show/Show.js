@@ -6,37 +6,37 @@ import library from "../../assets/library.jpg";
 function Show({ user }) {
   const { bookId } = useParams();
 
-  const {
-    authors,
-    categories,
-    description,
-    imageLinks,
-    pageCount,
-    previewLink,
-    publishedDate,
-    publisher,
-    title,
-    subtitle,
-  } = book.volumeInfo;
+  // const {
+  //   authors,
+  //   categories,
+  //   description,
+  //   imageLinks,
+  //   pageCount,
+  //   previewLink,
+  //   publishedDate,
+  //   publisher,
+  //   title,
+  //   subtitle,
+  // } = book.volumeInfo;
 
   return (
     <div className="main-screen">
       <div className="header">
         <img src={library} alt="" />
         <div className="info">
-          <h1>{book.title}</h1>
-          <h3>{book.authors}</h3>
+          <h1>Book title</h1>
+          <h3>Book authors</h3>
           <br />
           <h4>
-            {publisher}
-            <span>{publishedDate}</span>
+            publisher
+            <span>publishedDate</span>
           </h4>
           <br />
           <a href="https://www.google.com/">
             <button>More</button>
           </a>
         </div>
-        <h4 className="description">{book.description}</h4>
+        <h4 className="description">Book description</h4>
       </div>
       <div className="bookshelf-navigation">
         <BackToExplore />

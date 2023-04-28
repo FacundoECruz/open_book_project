@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import AuthenticatedApp from "./AuthenticatedApp";
 import UnauthenticatedApp from "./UnauthenticatedApp";
@@ -8,10 +8,6 @@ function App() {
   const [user, setUser] = useState(
     () => window.localStorage.getItem("user") || null
   );
-
-  useEffect(() => {
-    console.log(user)
-  }, []);
 
   function handleUser({ username, password }) {
     //Vamos a necesitar un servicio de autenticacion de usuarios

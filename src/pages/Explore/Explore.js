@@ -1,9 +1,10 @@
 import BookResult from "../../components/ui/BookResult";
+import useQuery from "../../hooks/useQuery";
 import "../../stylesheets/Explore.css"
 
 function Explore({ user, logout }) {
   
-  
+  const {data, status} = useQuery()
 
   return (
     <>

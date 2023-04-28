@@ -75,8 +75,14 @@ More folders, less files in the src folder. Src folder much more cleaner and all
 
 __components__ and __pages__ links to each other. In __components__ we have general and small components. A lot of times there are only presentational components, there no need to store any state, you give them data and then it renders some output to the screen, and you use them in several parts of you app. 
 The __pages__ folder is for each individual page in your screen. Even if you have a small component, if it's used only in this page, should be in this folder. Same for the contexts, hooks, utils.
-09:00
 
+## 25/4/23
+<hr/>
+
+What is the problem with this approach which leads to the next level?
+When you scale up to a really large enterprise style app, with tons of different features and a tons of different additions, you'll quickly run into problems in this structure.
+- More and more things will be shared across multiple pages. You add more components so you need to pull things out of your pages folder and put them into components, because they can be shared across the entire app.
+- This is a problem because as your app grows your pages folder becomes more simpler and your components folder becomes more complex, which is the problem we're trying to avoid.
 
 ### ADVANCED
 

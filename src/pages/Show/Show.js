@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import BackToExplore from "../../components/ui/BackToExplore";
 import "../../stylesheets/Show.css";
-import library from "../assets/library.jpg";
+import library from "../../assets/library.jpg";
 
 function Show({ user }) {
   const { bookId } = useParams();

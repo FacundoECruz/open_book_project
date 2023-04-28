@@ -1,6 +1,6 @@
 import Explore from "./pages/Explore/Explore";
 import Show from "./pages/Show/Show";
-import NotFoundScreen from "../../pages/NotFoundScreen";
+import NotFoundScreen from "./pages/NotFoundScreen";
 import { Routes, Route } from "react-router-dom";
 import "./stylesheets/AuthenticatedApp.css";
 

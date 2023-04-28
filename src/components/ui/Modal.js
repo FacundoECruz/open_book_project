@@ -1,5 +1,5 @@
-import LoginForm from "../LoginForm";
-import "./Modal.css";
+import LoginForm from "../form/LoginForm";
+import "../../stylesheets/Modal.css";
 
 function Modal({ btnText, close, onSubmit }) {
   return (

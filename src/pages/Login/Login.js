@@ -1,7 +1,8 @@
-import { useState } from 'react';
+import { useState } from "react";
+import Modal from "../../components/ui/Modal"
 import "../../stylesheets/Login.css"
 
-function Login() {
+function Login({onSubmit}) {
   const [status, setStatus] = useState("idle");
 
   function closeModal() {

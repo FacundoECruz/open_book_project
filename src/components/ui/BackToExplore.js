@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./BackToExplore.css"
+import "../../stylesheets/BackToExplore.css"
 
 function BackToExplore() {
   return (

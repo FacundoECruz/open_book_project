@@ -1,4 +1,4 @@
-import "./BookResult.css";
+import "../../stylesheets/BookResult.css";
 import { Link } from "react-router-dom";
 
 function BookResult({ data }) {

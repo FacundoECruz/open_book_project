@@ -1,5 +1,5 @@
 import "../../stylesheets/LoginForm.css";
-import FormInput from "./FormInput";
+import FormInput from "../../components/form/FormInput";
 import { useState } from "react";
 
 function LoginForm({ btnText, onSubmit }) {

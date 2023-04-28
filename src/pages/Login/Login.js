@@ -1,5 +1,6 @@
 import { useState } from "react";
-import Modal from "../../components/ui/Modal"
+import Modal from "./Modal"
+import Button from "../../components/ui/Button";
 import "../../stylesheets/Login.css"
 
 function Login({onSubmit}) {
@@ -20,6 +21,8 @@ function Login({onSubmit}) {
             <button onClick={() => setStatus("Login")}>Login</button>
             <button onClick={() => setStatus("Register")}>Register</button>
           </div>
+          {/* El boton no agarra ni width, height, ni bgColor */}
+          <Button width="150px" height="80px" bgColor="#ffeecc" innerText="Submit" type="submit"/>
         </div>
       ) : null}
       {status === "idle" ? null : <Modal btnText={status} close={closeModal} onSubmit={onSubmit}/>}

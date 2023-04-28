@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "../stylesheets/Login.css"
+import "../../stylesheets/Login.css"
 
 function Login() {
   const [status, setStatus] = useState("idle");

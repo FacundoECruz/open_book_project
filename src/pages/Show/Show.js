@@ -1,11 +1,10 @@
 import { useParams } from "react-router-dom";
-import BackToExplore from "../components/BackToExplore";
-import "../stylesheets/Show.css";
+import BackToExplore from "../../components/BackToExplore";
+import "../../stylesheets/Show.css";
 import library from "../assets/library.jpg";
 
-function BookScreen({ data }) {
+function Show({ user }) {
   const { bookId } = useParams();
-  const book = data.find((b) => b.id === bookId);
 
   const {
     authors,
@@ -63,4 +62,4 @@ function BookScreen({ data }) {
   );
 }
 
-export default BookScreen;
+export default Show;

@@ -1,29 +1,25 @@
-import DiscoverBooks from "./DiscoverBooks/DiscoverBooks";
-import BookScreen from "../../pages/BookScreen";
+import Explore from "./pages/Explore/Explore";
+import Show from "./pages/Show/Show";
 import NotFoundScreen from "../../pages/NotFoundScreen";
-import useQuery from "../../hooks/useQuery";
-import {Routes, Route} from "react-router-dom"
-import "./stylesheets/AuthenticatedApp.css"
+import { Routes, Route } from "react-router-dom";
+import "./stylesheets/AuthenticatedApp.css";
 
-function AuthenticatedApp({user, logout}) {
-
-  const {data, status, searchBook} = useQuery()
+function AuthenticatedApp({ user, logout }) {
   return (
     <div className="authenticated-app">
-      <AppRoutes data={data} status={status} searchBook={searchBook} user={user} logout={logout}/>
-      {/* <DiscoverBooks user={user} logout={logout}/> */}
+      <AppRoutes user={user} logout={logout} />
     </div>
   );
 }
 
-function AppRoutes({user, logout, data, status, searchBook}) {
+function AppRoutes({ user, logout }) {
   return (
-    <Routes data={data}>
-      <Route path="/" element={<DiscoverBooks user={user} logout={logout} data={data} status={status} searchBook={searchBook}/>} />
-      <Route path="/book/:bookId" element={<BookScreen user={user} data={data} />} />
+    <Routes user={user} logout={logout}>
+      <Route path="/" element={<Explore user={user} logout={logout} />} />
+      <Route path="/book/:bookId" element={<Show user={user} />} />
       <Route path="*" element={<NotFoundScreen />} />
     </Routes>
-  )
+  );
 }
 
 export default AuthenticatedApp;

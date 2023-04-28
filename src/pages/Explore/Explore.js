@@ -1,8 +1,8 @@
 import SearchBar from "./SearchBar/SearchBar";
 import BookResult from "../BookResult/BookResult";
-import "../stylesheets/Explore.css";
+import "../../stylesheets/Explore.css"
 
-function DiscoverBooks({ user, logout, data, status, searchBook }) {
+function Explore({ user, logout }) {
   
   return (
     <>
@@ -26,4 +26,4 @@ function DiscoverBooks({ user, logout, data, status, searchBook }) {
   );
 }
 
-export default DiscoverBooks;
+export default Explore;

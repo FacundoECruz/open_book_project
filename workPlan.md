@@ -88,8 +88,6 @@ When you scale up to a really large enterprise style app, with tons of different
 
 ******************************************************
 
-_How to structure the auth/unauth app architecture?_
-
 - _assets:_ you know, images and so on.
 
 - _components:_ button, form, formModal, searchInput, resultCard, review, navbar?, showCard. 
@@ -99,4 +97,8 @@ _How to structure the auth/unauth app architecture?_
 - _pages:_ Explore, Show, Login, NotFound.
 
 - _utils:_ client, fakeDB.
+
+_Do we need to make two separated querys?_
+- One for the search.
+- One for the show.
 

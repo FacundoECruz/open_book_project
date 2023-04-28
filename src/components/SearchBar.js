@@ -1,6 +1,8 @@
 import { useRef } from "react";
 import "./SearchBar.css";
 
+//WE NEED TO SPLIT THIS COMPONENT
+
 function SearchBar({ onSubmit, user, logout, status }) {
   const inputRef = useRef();
 

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import BackToExplore from "../../components/BackToExplore";
+import BackToExplore from "../../components/ui/BackToExplore";
 import "../../stylesheets/Show.css";
 import library from "../assets/library.jpg";
 

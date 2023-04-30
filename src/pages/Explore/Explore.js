@@ -1,12 +1,15 @@
 import BookResult from "../../components/ui/BookResult";
-import { useRef } from "react";
 import useQuery from "../../hooks/useQuery";
 import FormInput from "../../components/form/FormInput";
+import {books as data} from "../../utils/fake-search-results"
 import "../../stylesheets/Explore.css";
 
 function Explore({ user, logout }) {
-  const { data, status, searchBook } = useQuery();
+  const { status, searchBook } = useQuery();
 
+  // La data tiene que venir de useQuery, pero aca la vamos a feikear 
+  // para laburar mientras tanto.
+ 
   function handleSubmit(e) {
     e.preventDefault();
     const query = e.target.elements.query.value;

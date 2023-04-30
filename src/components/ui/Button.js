@@ -1,3 +1,6 @@
+// Esto se arregla viendo como es exactamente la sintaxis de
+// los estilos.
+
 function Button({ width, height, bgColor, innerText, type = "" }) {
   return (
     <button

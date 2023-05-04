@@ -100,5 +100,26 @@ When you scale up to a really large enterprise style app, with tons of different
 
 _Do we need to make two separated querys?_
 - One for the search.
-- One for the show.
+- Other for the show page.
+YES
+
+_How to set the useQuery Hook?_
+
+It needs to manage two different querys to the google books api:
+  Receives:
+  - Search query (string)
+  QueryTo:
+  - `https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}&maxResults=40`
+  Returns: 
+  - Data(40 books that matches with the query)
+  - Status
+
+  Receives:
+  - BookId query (string)
+  QueryTo:
+  - `https://www.googleapis.com/books/v1/volumes/${bookId}` 
+  Returns: 
+  - Data(1 book that matches with the id)
+  - Status
+
 

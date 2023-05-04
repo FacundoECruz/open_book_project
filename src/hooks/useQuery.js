@@ -8,8 +8,8 @@ function useQuery() {
   const [queried, setQueried] = useState(false);
   const [status, setStatus] = useState("idle");
 
-  const searchBook = (formData) => {
-    setQuery(formData);
+  const searchBook = (bookData) => {
+    setQuery(bookData);
     setQueried(true);
   };
 

@@ -24,7 +24,7 @@ function Explore({ user, logout }) {
           <h1>Find your favorites books and keep track of them.</h1>
         </div>
         <form className="search-form-container" onSubmit={handleSearch}>
-          <FormInput label="query" type="text" placeholder="Enter your book name"/>
+          <FormInput label="search" type="text" placeholder="Enter your book name"/>
           {status === "loading" ? (
             <p>Loading...</p>
           ) : (

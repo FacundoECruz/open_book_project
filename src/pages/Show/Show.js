@@ -1,45 +1,64 @@
 import { useParams } from "react-router-dom";
-import BackToExplore from "../../components/ui/BackToExplore";
+import { useState, useEffect } from "react";
+import Button from "../../components/ui/Button";
 import "../../stylesheets/Show.css";
-import library from "../../assets/library.jpg";
 
 function Show({ user }) {
   const { bookId } = useParams();
+  const [bookData, setBookData] = useState(null);
 
-  // const {
-  //   authors,
-  //   categories,
-  //   description,
-  //   imageLinks,
-  //   pageCount,
-  //   previewLink,
-  //   publishedDate,
-  //   publisher,
-  //   title,
-  //   subtitle,
-  // } = book.volumeInfo;
+  useEffect(() => {
+    fetch(`https://www.googleapis.com/books/v1/volumes/${bookId}`)
+      .then((response) => response.json())
+      .then((data) => {
+        setBookData(data);
+        console.log(data);
+      })
+      .catch((error) => console.error(error));
+  }, [bookId]);
+
+  if (!bookData) {
+    return <div>Loading...</div>;
+  }
+
+  const {
+    authors,
+    categories,
+    description,
+    imageLinks,
+    pageCount,
+    previewLink,
+    publishedDate,
+    publisher,
+    title,
+    subtitle,
+  } = bookData.volumeInfo;
 
   return (
     <div className="main-screen">
       <div className="header">
-        <img src={library} alt="" />
+        <img src={imageLinks.thumbnail} alt="book-img" />
         <div className="info">
-          <h1>Book title</h1>
-          <h3>Book authors</h3>
+          <h1>{title}</h1>
+          {authors
+            ? authors.map((a) => {
+                return <h3 key={a}>{a}</h3>;
+              })
+            : null}
           <br />
           <h4>
-            publisher
-            <span>publishedDate</span>
+            {publisher}
+            <span>{publishedDate}</span>
           </h4>
           <br />
-          <a href="https://www.google.com/">
-            <button>More</button>
+          <a href={previewLink}>
+            <Button width="100px" height="30px" innerText="More" />
           </a>
         </div>
-        <h4 className="description">Book description</h4>
+        <p className="description">{description}</p>
       </div>
       <div className="bookshelf-navigation">
-        <BackToExplore />
+        <Button width="100px" height="50px" innerText="Back to Explore" bgColor="grey"/>
         <form className="review">
           <div className="checkboxes">
             <input type="checkbox" value="1" />

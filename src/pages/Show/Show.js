@@ -12,7 +12,6 @@ function Show({ user }) {
       .then((response) => response.json())
       .then((data) => {
         setBookData(data);
-        console.log(data);
       })
       .catch((error) => console.error(error));
   }, [bookId]);
@@ -48,7 +47,7 @@ function Show({ user }) {
           <br />
           <h4>
             {publisher}
-            <span>{publishedDate}</span>
+            <span className="published-date">{publishedDate}</span>
           </h4>
           <br />
           <a href={previewLink}>
@@ -58,7 +57,14 @@ function Show({ user }) {
         <p className="description">{description}</p>
       </div>
       <div className="bookshelf-navigation">
-        <Button width="100px" height="50px" innerText="Back to Explore" bgColor="grey"/>
+        <a href="/">
+        <Button
+          width="100px"
+          height="50px"
+          innerText="Back to Explore"
+          bgColor="grey"
+        />
+        </a>
         <form className="review">
           <div className="checkboxes">
             <input type="checkbox" value="1" />

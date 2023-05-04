@@ -5,6 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import "./stylesheets/AuthenticatedApp.css";
 
 function AuthenticatedApp({ user, logout }) {
+
   return (
     <div className="authenticated-app">
       <AppRoutes user={user} logout={logout} />

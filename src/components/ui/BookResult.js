@@ -8,15 +8,13 @@ function BookResult({ data }) {
     let amount = item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
     if (thumbnail !== undefined && amount !== undefined) {
       return (
-        <>
-          <Link to={`/book/${item.id}`} className="book-container" key={item.id}>
-            <img src={thumbnail} alt="thumbnail" />
-            <div className="bottom">
-              <h3 className="title">{item.volumeInfo.title}</h3>
-              <p className="amount">&#8377;{amount}</p>
-            </div>
-          </Link>
-        </>
+        <Link to={`/book/${item.id}`} className="book-container" key={item.id}>
+          <img src={thumbnail} alt="thumbnail" />
+          <div className="bottom">
+            <h3 className="title">{item.volumeInfo.title}</h3>
+            <p className="amount">&#8377;{amount}</p>
+          </div>
+        </Link>
       );
     }
   });

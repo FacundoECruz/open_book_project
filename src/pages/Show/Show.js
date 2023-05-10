@@ -36,8 +36,8 @@ function Show({ user }) {
   return (
     <div className="main-screen">
       <div className="header">
-        <img src={imageLinks.thumbnail} alt="book-img" />
         <div className="info">
+        <img src={imageLinks.thumbnail} alt="book-img" />
           <h1>{title}</h1>
           {authors
             ? authors.map((a) => {

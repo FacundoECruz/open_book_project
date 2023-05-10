@@ -9,12 +9,12 @@ function Explore({ user, logout }) {
  
   function handleSearch(e) {
     e.preventDefault();
-    const query = e.target.elements.query.value;
+    const query = e.target.elements.search.value;
     if (query === "") {
       return;
     }
     searchBook(query)
-    e.target.elements.query.value = ""
+    e.target.elements.search.value = ""
   }
 
   return (

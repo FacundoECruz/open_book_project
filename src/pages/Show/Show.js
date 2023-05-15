@@ -54,7 +54,9 @@ function Show({ user }) {
             <Button width="100px" height="30px" innerText="More" />
           </a>
         </div>
-        <p className="book-description">{description}</p>
+        <div className="book-description">
+          <p>{description}</p>
+        </div>
       </div>
       <div className="bookshelf-navigation">
         <a href="/">

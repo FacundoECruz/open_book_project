@@ -51,7 +51,7 @@ function Show({ user }) {
           </h4>
           <br />
           <a href={previewLink}>
-            <Button width="100px" height="30px" innerText="More" />
+            <Button innerText="More"/>
           </a>
         </div>
         <div className="book-description">
@@ -61,10 +61,8 @@ function Show({ user }) {
       <div className="bookshelf-navigation">
         <a href="/">
           <Button
-            width="100px"
-            height="50px"
             innerText="Back to Explore"
-            bgColor="grey"
+            id="back-to-explore"
           />
         </a>
         <form className="review">

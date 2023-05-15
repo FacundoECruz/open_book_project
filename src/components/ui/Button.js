@@ -1,13 +1,6 @@
-function Button({ width, height, bgColor, innerText, type = "" }) {
+function Button({innerText, id}) {
   return (
-    <button
-      style={{
-        width,
-        height,
-        backgroundColor: bgColor,
-      }}
-      type={type}
-    >
+    <button id={id}>
       {innerText}
     </button>
   );

@@ -18,6 +18,7 @@
 .book-info {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   margin-top: 10px;
   margin-left: 5px;
 }
@@ -37,11 +38,15 @@
   margin-top: 10px;
 }
 
+.book-header button {
+  width: 50px;
+}
+
 .publish-data {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   width: 30%;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .book-description {
@@ -49,7 +54,6 @@
   display: flex;
   align-items: center;
   border: 1px solid black;
-  font-size:larger;
 }
 
 .bookshelf-navigation {
@@ -62,6 +66,10 @@
   justify-content: space-between;
   background-color: var(--pink);
   padding: 3px;
+}
+
+#back-to-explore {
+  width: 70px;
 }
 
 .review {

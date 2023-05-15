@@ -34,10 +34,10 @@ function Show({ user }) {
   } = bookData.volumeInfo;
 
   return (
-    <div className="main-screen">
-      <div className="show-header">
-        <div className="info">
-        <img src={imageLinks.thumbnail} alt="book-img" />
+    <div className="show-screen">
+      <div className="book-info">
+        <div className="book-header">
+          <img src={imageLinks.thumbnail} alt="book-img" />
           <h1>{title}</h1>
           {authors
             ? authors.map((a) => {
@@ -45,25 +45,25 @@ function Show({ user }) {
               })
             : null}
           <br />
-          <h4>
+          <h4 className="publish-data">
             {publisher}
-            <span className="published-date">{publishedDate}</span>
+            <span>{publishedDate}</span>
           </h4>
           <br />
           <a href={previewLink}>
             <Button width="100px" height="30px" innerText="More" />
           </a>
         </div>
-        <p className="description">{description}</p>
+        <p className="book-description">{description}</p>
       </div>
       <div className="bookshelf-navigation">
         <a href="/">
-        <Button
-          width="100px"
-          height="50px"
-          innerText="Back to Explore"
-          bgColor="grey"
-        />
+          <Button
+            width="100px"
+            height="50px"
+            innerText="Back to Explore"
+            bgColor="grey"
+          />
         </a>
         <form className="review">
           <div className="checkboxes">
